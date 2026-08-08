@@ -1,12 +1,12 @@
 package com.github.selvabenitez.domain.models;
 
-public class Course {
+public class CourseModel {
    private Long id;
     private String code;
 
-    public Course() {}
+    public CourseModel() {}
 
-    public Course(Long id, String code, String name, String description, Integer maxCapacity) {
+    public CourseModel(Long id, String code, String name, String description, Integer maxCapacity) {
         this.id = id;
         this.code = code;
         this.name = name;

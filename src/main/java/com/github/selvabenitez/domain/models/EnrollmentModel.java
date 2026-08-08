@@ -2,14 +2,14 @@ package com.github.selvabenitez.domain.models;
 
 import java.time.LocalDate;
 
-public class Enrollment {
+public class EnrollmentModel {
     private Long id;
     private Long studentId;
     private Long courseId;
 
-    public Enrollment(Long id, Long studentId, Long courseId) {}
+    public EnrollmentModel(Long id, Long studentId, Long courseId) {}
 
-    public Enrollment(Long id, Long studentId, Long courseId, LocalDate enrollmentDate, EnrollmentStatus status) {
+    public EnrollmentModel(Long id, Long studentId, Long courseId, LocalDate enrollmentDate, EnrollmentStatus status) {
         this.id = id;
         this.studentId = studentId;
         this.courseId = courseId;

@@ -2,14 +2,14 @@ package com.github.selvabenitez.domain.models;
 
 import java.time.LocalDate;
 
-public class Student {
+public class StudentModel {
     private long id;
     private String firstName;
     private String lastName;
 
-    public Student() {}
+    public StudentModel() {}
 
-    public Student(long id, String lastName, String firstName, String email, LocalDate birthDate) {
+    public StudentModel(long id, String lastName, String firstName, String email, LocalDate birthDate) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
