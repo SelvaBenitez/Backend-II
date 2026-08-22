@@ -1,15 +1,20 @@
 package com.github.selvabenitez.domain.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
 import java.time.LocalDate;
+@Entity
+@Table
 
 public class StudentModel {
-    private long id;
+    private Long id;
     private String firstName;
     private String lastName;
 
     public StudentModel() {}
 
-    public StudentModel(long id, String lastName, String firstName, String email, LocalDate birthDate) {
+    public StudentModel(Long id, String lastName, String firstName, String email, LocalDate birthDate) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -17,11 +22,11 @@ public class StudentModel {
         this.birthDate = birthDate;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

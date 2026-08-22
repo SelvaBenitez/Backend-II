@@ -1,21 +1,15 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/semestre3_2026?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/semestre3_2026?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: selva
     password: 48975snbp
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
       ddl-auto: update
     show-sql: true
     properties:
       hibernate:
         format_sql: true
-
-  spring:
-    jpa:
-      database-platform: org.hibernate.dialect.MySQLDialect
-      hibernate:
-        ddl-auto: update
-      show-sql: true
