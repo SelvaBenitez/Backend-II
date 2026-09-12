@@ -1,60 +1,27 @@
 package com.github.selvabenitez.domain.models;
 
 public class CourseModel {
-   private Long id;
-    private String code;
-
-    public CourseModel() {}
-
-    public CourseModel(Long id, String code, String name, String description, Integer maxCapacity) {
-        this.id = id;
-        this.code = code;
-        this.name = name;
-        this.description = description;
-        this.maxCapacity = maxCapacity;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Integer getMaxCapacity() {
-        return maxCapacity;
-    }
-
-    public void setMaxCapacity(Integer maxCapacity) {
-        this.maxCapacity = maxCapacity;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
+    private Long id;
     private String name;
     private String description;
-    private Integer maxCapacity;
+    private Integer capacity;
+
+    public CourseModel() {
+    }
+
+    public CourseModel(Long id, String name, String description, Integer capacity) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.capacity = capacity;
+    }
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
+    public Integer getCapacity() { return capacity; }
+    public void setCapacity(Integer capacity) { this.capacity = capacity; }
 }
