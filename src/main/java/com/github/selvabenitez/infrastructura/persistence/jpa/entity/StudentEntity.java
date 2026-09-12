@@ -1,22 +1,41 @@
-package com.github.selvabenitez.domain.models;
+package com.github.selvabenitez.infrastructura.persistence.jpa.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "students")
+public class StudentEntity {
 
-public class StudentModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "first_name", nullable = false, length = 100)
     private String firstName;
+
+    @Column(name = "last_name", nullable = false, length = 100)
     private String lastName;
 
-    public StudentModel() {}
+    @Column(nullable = false, unique = true, length = 100)
+    private String email;
 
-    public StudentModel(Long id, String lastName, String firstName, String email, LocalDate birthDate) {
+    @Column(name = "birth_date", nullable = false)
+    private LocalDate birthDate;
+
+    public StudentEntity() {
+    }
+
+    public StudentEntity(Long id, String firstName, String lastName, String email, LocalDate birthDate) {
         this.id = id;
-        this.lastName = lastName;
         this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.birthDate = birthDate;
     }
@@ -60,7 +79,4 @@ public class StudentModel {
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
-
-    private String email;
-    private LocalDate birthDate;
 }
