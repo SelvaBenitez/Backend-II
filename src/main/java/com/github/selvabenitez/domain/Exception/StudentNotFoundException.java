@@ -1,7 +1,12 @@
 package com.github.selvabenitez.domain.Exception;
 
-public class StudentNotFoundException extends RuntimeException {
-    public StudentNotFoundException(String id) {
-        super("Student not found: " + id);
+public class StudentNotFoundException extends ResourceNotFoundException {
+
+    public StudentNotFoundException(Long id) {
+        super("Estudiante no encontrado con id: " + id);
+    }
+
+    public StudentNotFoundException(String message) {
+        super(message);
     }
 }

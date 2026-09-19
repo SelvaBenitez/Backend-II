@@ -1,23 +1,14 @@
 package com.github.selvabenitez.Application.dto;
 
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import java.time.LocalDate;
 
-public record CreateStudentDto(
-        @NotBlank(message = "firstName es obligatorio")
+public record PatchStudentDto(
         String firstName,
-
-        @NotBlank(message = "lastName es obligatorio")
         String lastName,
-
-        @NotBlank(message = "email es obligatorio")
         @Email(message = "email inválido")
         String email,
-
-        @NotNull(message = "birthDate es obligatorio")
         @Past(message = "birthDate debe ser una fecha pasada")
         LocalDate birthDate
 ) {}

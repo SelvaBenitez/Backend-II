@@ -38,7 +38,20 @@ public class CourseRepositoryAdapter implements CourseRepository {
         return jpaRepository.findById(id).map(this::toModel);
     }
 
-    // --- Mapeos Entity <-> Model ---
+    @Override
+    public Optional<CourseModel> findByCode(String code) {
+        return Optional.empty();
+    }
+
+    @Override
+    public boolean deleteById(Long id) {
+        if (jpaRepository.existsById(id)) {
+            jpaRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
     private CourseModel toModel(CourseEntity entity) {
         return new CourseModel(
                 entity.getId(),
