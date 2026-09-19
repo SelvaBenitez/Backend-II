@@ -1,17 +1,19 @@
-package com.github.selvabenitez.domain.models;
+package com.github.selvabenitez.Application.dto;
 
+import com.github.selvabenitez.domain.models.EnrollmentStatus;
 import java.time.LocalDate;
 
-public class EnrollmentModel {
+public class EnrollmentResponseDto {
+
     private Long id;
     private Long studentId;
     private Long courseId;
     private LocalDate enrollmentDate;
     private EnrollmentStatus status;
 
-    public EnrollmentModel() {}
+    public EnrollmentResponseDto() {}
 
-    public EnrollmentModel(Long id, Long studentId, Long courseId, LocalDate enrollmentDate, EnrollmentStatus status) {
+    public EnrollmentResponseDto(Long id, Long studentId, Long courseId, LocalDate enrollmentDate, EnrollmentStatus status) {
         this.id = id;
         this.studentId = studentId;
         this.courseId = courseId;

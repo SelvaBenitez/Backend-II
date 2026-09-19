@@ -1,49 +1,43 @@
-/*
 package com.github.selvabenitez.domain.repository.impl;
-import com.github.selvabenitez.domain.models.CourseModel;
 
-import java.util.ArrayList;
+import com.github.selvabenitez.domain.models.CourseModel;
+import com.github.selvabenitez.domain.repository.CourseRepository;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
-public class CourseRepositoryService {
-    private final List<CourseModel> database = new ArrayList<>();
-    private Long sequenceId = 1L;
+
+@Service
+public class CourseRepositoryService implements CourseRepository {
+
+    private final CourseRepository courseRepository;
+
+    public CourseRepositoryService(CourseRepository courseRepository) {
+        this.courseRepository = courseRepository;
+    }
 
     @Override
     public List<CourseModel> findAll() {
-        return new ArrayList<>(database);
+        return courseRepository.findAll();
     }
 
     @Override
     public CourseModel save(CourseModel course) {
-        if (course.getId() == null) {
-            course.setId(sequenceId++);
-            database.add(course);
-        } else {
-            deleteById(course.getId());
-            database.add(course);
-        }
-        return course;
+        return courseRepository.save(course);
     }
 
     @Override
     public Optional<CourseModel> findById(Long id) {
-        return database.stream()
-                .filter(c -> c.getId().equals(id))
-                .findFirst();
+        return courseRepository.findById(id);
     }
 
     @Override
     public Optional<CourseModel> findByCode(String code) {
-        return database.stream()
-                .filter(c -> c.getCode().equalsIgnoreCase(code))
-                .findFirst();
+        return courseRepository.findByCode(code);
     }
 
     @Override
     public boolean deleteById(Long id) {
-        return database.removeIf(c -> c.getId().equals(id));
+        return courseRepository.deleteById(id);
     }
 }
-
-*/

@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface EnrollmentRepository {
+    EnrollmentModel save(EnrollmentModel enrollmentModel);
     List<EnrollmentModel> findAll();
-    EnrollmentModel save(EnrollmentModel enrollment);
     Optional<EnrollmentModel> findById(Long id);
     Boolean existByStudentIdAndCourseId(Long studentId, Long courseId);
     Long countByCourseIdAndStatus(Long courseId, EnrollmentStatus status);
